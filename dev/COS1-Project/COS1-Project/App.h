@@ -1,4 +1,14 @@
 #pragma once
+#include "TaskManager.h"
 class App
-{};
+{
+private:
+	TaskManager manager;
+	bool isRunning = false;
+	void DisplayMenu() const;
+	void HandleChoice(int choice);
+public:
+	App();
+	void Run();
+ };
 
