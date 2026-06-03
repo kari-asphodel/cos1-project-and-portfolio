@@ -4,7 +4,7 @@ class Task
 {
 private:
 	std::string title = "";
-	bool isCompletd = false;
+	bool isCompleted = false;
 public:
 	Task(std::string taskTitle);
 	

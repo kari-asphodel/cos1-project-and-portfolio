@@ -3,7 +3,7 @@
 Task::Task(std::string taskTitle)
 {
 	title = taskTitle;
-	isCompletd = false;
+	isCompleted = false;
 }
 
 std::string Title::GetTitle() const
@@ -13,10 +13,10 @@ std::string Title::GetTitle() const
 
 bool Task::IsCompleted() const
 {
-	return isCompletd;
+	return isCompleted;
 }
 
 void Task::CompleteTask()
 {
-	isCompletd = true;
+	isCompleted = true;
 }
