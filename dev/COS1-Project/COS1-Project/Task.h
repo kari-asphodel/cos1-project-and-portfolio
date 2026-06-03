@@ -14,3 +14,9 @@ public:
 	void CompleteTask();
 };
 
+/*
+.h = what the class can do
+.cpp = how the class does it
+private = protected data
+public = usable behavior
+*/
