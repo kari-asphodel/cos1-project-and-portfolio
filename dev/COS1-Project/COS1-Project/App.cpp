@@ -17,7 +17,7 @@ void App::Run()
 			std::string input;
 			std::getline(std::cin, input);
 			int choice = std::stoi(input);
-			HandleChoice();
+			HandleChoice(choice);
 	}
 }
 
