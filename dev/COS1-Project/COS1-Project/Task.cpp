@@ -6,7 +6,7 @@ Task::Task(std::string taskTitle)
 	isCompleted = false;
 }
 
-std::string Title::GetTitle() const
+std::string Task::GetTitle() const
 {
 	return title;
 }
