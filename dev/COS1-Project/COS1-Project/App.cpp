@@ -25,7 +25,7 @@ void App::DisplayMenu() const
 	std::cout << "\n========== CRYPT KEEPER ==========\n";
 	std::cout << "1. Add Task\n";
 	std::cout << "2. View Active Tasks\n";
-	std::cout << "3. Complete\n";
+	std::cout << "3. Complete Tasks\n";
 	std::cout << "4. View Completed Tasks\n";
 	std::cout << "5. View Progress Summary\n";
 	std::cout << "6. Quit\n";
@@ -58,6 +58,7 @@ int App::GetValidatedInputInRange(int min, int max)
 void App::HandleChoice(int choice)
 {
 	std::string title = "";
+	int taskNumber = 0;
 	switch (choice)
 	{
 	case 1:
@@ -74,9 +75,9 @@ void App::HandleChoice(int choice)
 			std::cout << "\nThere are no active tasks to complete.\n";
 			return;
 		}
-		manager.ViewActiveTasks()
+		manager.ViewActiveTasks();
 			std::cout << "\nEnter the task number to complete: ";
-		int  taskNumber = GetValidatedInputInRange(1, manager.GetActiveTaskCount());
+			taskNumber = GetValidatedInputInRange(1, manager.GetActiveTaskCount());
 		manager.CompleteTask(taskNumber - 1);
 		break;
 	case 4:

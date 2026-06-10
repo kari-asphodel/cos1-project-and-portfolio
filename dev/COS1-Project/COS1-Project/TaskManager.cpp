@@ -3,7 +3,7 @@
 
 void TaskManager::AddTask(std::string title)
 {
-	tasks.push_back(Task(title));
+	activeTasks.push_back(Task(title));
 	std::cout << "\nTask added to the crypt.\n";
 }
 
