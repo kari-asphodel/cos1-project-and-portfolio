@@ -14,20 +14,45 @@ void App::Run()
 	while (isRunning)
 	{
 		DisplayMenu();
-			std::string input;
-			std::getline(std::cin, input);
-			int choice = std::stoi(input);
-			HandleChoice(choice);
+		int choice = GetValidatedInputInRange(1, 6);
+		HandleChoice(choice);
 	}
+	std::cout << "\nGoodbye. May your task list stay only midly cursed.\n";
 }
 
 void App::DisplayMenu() const
 {
 	std::cout << "\n========== CRYPT KEEPER ==========\n";
 	std::cout << "1. Add Task\n";
-	std::cout << "2. View Tasks\n";
-	std::cout << "3. Quit\n";
-	std::cout << "Choose an option between 1 and 3: ";
+	std::cout << "2. View Active Tasks\n";
+	std::cout << "3. Complete\n";
+	std::cout << "4. View Completed Tasks\n";
+	std::cout << "5. View Progress Summary\n";
+	std::cout << "6. Quit\n";
+	std::cout << "Choose an option between 1 and 6: ";
+}
+
+int App::GetValidatedInputInRange(int min, int max)
+{
+	std::string input;
+	int number;
+	while (true)
+	{
+		std::getline(std::cin, input);
+		try
+		{
+			number = std::stoi(input);
+			if (number >= min && number <= max)
+			{
+				return number;
+			}
+			std::cout << "Invalid option. Please enter a number between " << min << " and " << max << ": ";
+		}
+		catch (...)
+		{
+			std::cout << "Invalid option. Please enter a number between " << min << " and " << max << ": ";
+		}
+	}
 }
 
 void App::HandleChoice(int choice)
@@ -41,9 +66,26 @@ void App::HandleChoice(int choice)
 		manager.AddTask(title);
 		break;
 	case 2:
-		manager.ViewTasks();
+		manager.ViewActiveTasks();
 		break;
 	case 3:
+		if (manager.GetActiveTaskCount() == 0)
+		{
+			std::cout << "\nThere are no active tasks to complete.\n";
+			return;
+		}
+		manager.ViewActiveTasks()
+			std::cout << "\nEnter the task number to complete: ";
+		int  taskNumber = GetValidatedInputInRange(1, manager.GetActiveTaskCount());
+		manager.CompleteTask(taskNumber - 1);
+		break;
+	case 4:
+		manager.ViewCompletedTasks();
+		break;
+	case 5:
+		manager.DisplaySummary();
+		break;
+	case 6:
 		isRunning = false;
 		break;
 	default:
@@ -52,3 +94,4 @@ void App::HandleChoice(int choice)
 	}
 
 }
+
