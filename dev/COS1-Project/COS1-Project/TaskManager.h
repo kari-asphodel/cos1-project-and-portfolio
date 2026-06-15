@@ -10,7 +10,7 @@ private:
 
 	void DisplayTaskList(const std::vector<Task>& taskList, std::string heading) const;
 public:
-	void AddTask(std::string title);
+	void AddTask(std::string title, std::string priority, std::string category);
 
 	void ViewActiveTasks()const;
 	void ViewCompletedTasks()const;
