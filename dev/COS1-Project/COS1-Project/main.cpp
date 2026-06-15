@@ -10,3 +10,19 @@ int main()
 
     return 0;
 }
+/*
+Add High, Medium, Low tasks
+Sort active tasks
+Filter by High
+Filter by Medium
+Filter by Low
+Filter when no matching tasks exist
+Complete a task after sorting
+View completed tasks
+Try invalid menu input
+Try empty title
+Try priority as HIGH
+Try priority as banana
+Try repeated sorting
+Try completing all tasks
+*/

@@ -31,7 +31,7 @@ void App::DisplayMenu() const
 	std::cout << "6. Sort Active Tasks by Priority\n";
 	std::cout << "7. Filter Active Tasks by Priority\n";
 	std::cout << "8. Quit\n";
-	std::cout << "Choose an option between 1 and 6: ";
+	std::cout << "Choose an option between 1 and 8: ";
 }
 
 int App::GetValidatedInputInRange(int min, int max)
@@ -117,7 +117,7 @@ void App::HandleChoice(int choice)
 		{
 			manager.ViewTasksByPriority("Low");
 		}
-		
+		break;
 	case 8:
 		isRunning = false;
 		break;
