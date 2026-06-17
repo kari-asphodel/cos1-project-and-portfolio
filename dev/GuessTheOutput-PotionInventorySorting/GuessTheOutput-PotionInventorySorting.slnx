@@ -4,5 +4,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="GuessTheOutput-PotionInventorySorting/GuessTheOutput-PotionInventorySorting.vcxproj" />
+  <Project Path="GuessTheOutput-PotionInventorySorting/GuessTheOutput-PotionInventorySorting.vcxproj" Id="b6bab636-f719-4379-bc07-9d9181f52f12" />
 </Solution>

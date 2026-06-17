@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Milestone 3 Markdown File.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Milestone 3 Markdown File"
+              "title": "README"
             }
           }
         ],
@@ -198,10 +198,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "976cf56f28c78225",
+  "active": "4b0bf0ba5030fdd5",
   "lastOpenFiles": [
-    "docs/FirstInitialLastName-Milestone2-Planning.md",
     "docs/Milestone 3 Markdown File.md",
+    "dev/COS1-Project/COS1-Project/ts0igjdw.o4o~",
+    "docs/FirstInitialLastName-Milestone2-Planning.md",
     "dev/PotionShelfPrototype/PotionShelfPrototype/ARM64/Debug/PotionSh.17366923.tlog/link.read.2.tlog",
     "dev/PotionShelfPrototype/PotionShelfPrototype/ARM64/Debug/PotionSh.17366923.tlog/link-cvtres.write.1.tlog",
     "dev/PotionShelfPrototype/PotionShelfPrototype/ARM64/Debug/PotionSh.17366923.tlog/link-cvtres.read.1.tlog",

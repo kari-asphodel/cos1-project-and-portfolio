@@ -44,6 +44,10 @@ int main()
     {
         std::cout << potions[i].GetName() << "\n";
     }
-
-    return 0;
+    std::cin.get();
 }
+/*
+* What prints first?
+* What does the > symbol do inside the sort?
+* Is this sorting lowest to highest or highest to lowest?
+*/
