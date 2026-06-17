@@ -4,5 +4,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="BugCourt/BugCourt.vcxproj" Id="1973836c-5567-4a43-a7d8-bb68eeb03779" />
+  <Project Path="GuessTheOutput-HauntedScoreboard/GuessTheOutput-HauntedScoreboard.vcxproj" Id="1333be67-6f0a-4b2d-8d4d-66206654e8ff" />
 </Solution>

@@ -4,5 +4,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="BugCourt/BugCourt.vcxproj" Id="1973836c-5567-4a43-a7d8-bb68eeb03779" />
+  <Project Path="Debugging-OvergrownSpellbook/Debugging-OvergrownSpellbook.vcxproj" Id="9fba2826-a8a6-459b-a150-88e9e1eba1a4" />
 </Solution>

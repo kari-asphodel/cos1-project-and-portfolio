@@ -4,7 +4,8 @@ void Case1()
 {
     int health = 100;
 
-    if (health = 0)
+    //if (health = 0) 
+    if (health == 0) 
     {
         std::cout << "You have died.\n";
     }
@@ -21,6 +22,7 @@ void Case2()
         if (choice == 1)
         {
             std::cout << "Goodbye!\n";
+            break; // missing break
         }
     }
 }
@@ -35,7 +37,7 @@ void Case3()
 }
 void Case4()
 {
-    int gold;
+    int gold; // we dont know whats inside this variable undefined
 
     std::cout << gold << "\n";
 
@@ -57,22 +59,23 @@ void Case6()
     while (health < 100)
     {
         std::cout << "Healing...\n";
+        health+=5;
     }
 }
 void Case7()
 {
     int dragons = 5;
 
-    dragons -= 10;
+    dragons += 10;
 
-    std::cout << dragons;
+    std::cout << dragons; // dont have negative dragons
 }
 void Case8()
 {
     std::cout << "1. Play\n";
     std::cout << "2. Exit\n";
 
-    if (choice == 7)
+    if (choice == 7) // dont have hidden options 
     {
         openSecretShop();
     }
@@ -82,6 +85,7 @@ void Case9()
     Potion* potion = new Potion();
 
     potion->drink();
+    delete potion; // dont forget to delete
 }
 void Case10()
 {
@@ -93,7 +97,7 @@ void Case10()
 }
 int main()
 {
-    Case1();
+    //Case1();
     //Case2();
     //Case3();
     //Case4();
@@ -102,5 +106,5 @@ int main()
     //Case7();
     //Case8();
     //Case9();
-    //Case10();
+    Case10();
 }

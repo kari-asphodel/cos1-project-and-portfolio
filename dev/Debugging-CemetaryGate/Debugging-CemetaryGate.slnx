@@ -4,5 +4,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="BugCourt/BugCourt.vcxproj" Id="1973836c-5567-4a43-a7d8-bb68eeb03779" />
+  <Project Path="Debugging-CemetaryGate/Debugging-CemetaryGate.vcxproj" Id="9982c6b6-7ba1-4f1a-a4cd-3428e45da8e3" />
 </Solution>
