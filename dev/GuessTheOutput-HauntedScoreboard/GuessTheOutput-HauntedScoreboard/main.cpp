@@ -47,6 +47,10 @@ int main()
         std::cout << players[i].GetName() << ": "
             << players[i].GetScore() << "\n";
     }
-
-    return 0;
+    std::cin.get();
+ /*
+ Which objects changed?
+Which objects stayed the same?
+Why did Edgar’s score not change?
+ */
 }
