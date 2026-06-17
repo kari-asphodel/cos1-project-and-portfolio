@@ -1,38 +1,46 @@
 #include <iostream>
+#include <string>
+void CastSpell(std::string spellName, std::string effect, int damage)
+{
+    std::cout << "You cast " << spellName << ".\n";
+    std::cout << effect << "\n";
+    std::cout << "The enemy takes " << damage << " damage. \n";
+}
 
 int main()
 {
     int spellChoice;
-
+    std::string input;
     std::cout << "Choose a spell:\n";
     std::cout << "1. Fire\n";
     std::cout << "2. Ice\n";
     std::cout << "3. Shadow\n";
     std::cout << "Enter choice: ";
-    std::cin >> spellChoice;
+    try { // added input validation
+        std::getline(std::cin, input);
+        spellChoice = stoi(input);
+    }
+    catch (...)
+    {
+        std::cout << "\nThat spell wasn't listed.\n";
+    }
 
     if (spellChoice == 1)
     {
-        std::cout << "You cast Fire.\n";
-        std::cout << "The room gets warmer.\n";
-        std::cout << "The enemy takes 10 damage.\n";
+        CastSpell("Fire", "The room gets warmer", 10);
     }
     else if (spellChoice == 2)
     {
-        std::cout << "You cast Ice.\n";
-        std::cout << "The room gets colder.\n";
-        std::cout << "The enemy takes 8 damage.\n";
+        CastSpell("Ice", "The room gets colder", 8);
     }
     else if (spellChoice == 3)
     {
-        std::cout << "You cast Shadow.\n";
-        std::cout << "The lights flicker.\n";
-        std::cout << "The enemy takes 12 damage.\n";
+        CastSpell("Shadow", "The lights flicker", 12);
     }
     else
     {
         std::cout << "Invalid spell.\n";
     }
-
+    std::cin.get();
     return 0;
 }
