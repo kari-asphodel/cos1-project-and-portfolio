@@ -17,6 +17,5 @@ int main()
 
         gate++;
     }
-
-    return 0;
+    std::cin.get();
 }
