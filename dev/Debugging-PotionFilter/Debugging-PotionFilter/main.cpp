@@ -5,7 +5,7 @@
 int main()
 {
     std::vector<std::string> potions;
-
+    std::vector<std::string> HealingPotions;
     potions.push_back("Healing");
     potions.push_back("Poison");
     potions.push_back("Healing");
@@ -13,16 +13,12 @@ int main()
 
     for (int i = 0; i < potions.size(); i++)
     {
-        if (potions[i] != "Healing")
+        if (potions[i] == "Healing")
         {
-            potions.erase(potions.begin() + i);
+            HealingPotions.push_back(potions[i]);
         }
     }
 
-    for (int i = 0; i < potions.size(); i++)
-    {
-        std::cout << potions[i] << "\n";
-    }
 
     return 0;
 }
