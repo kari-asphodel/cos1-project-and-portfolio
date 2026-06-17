@@ -19,7 +19,6 @@ int main()
     std::cout << "Enter choice: ";
     std::cin >> choice;
 
-    std::cout << "You selected: " << snacks[choice] << "\n";
-
-    return 0;
+    std::cout << "You selected: " << snacks[choice - 1] << "\n";
+    std::cin.get();
 }
