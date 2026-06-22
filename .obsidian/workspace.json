@@ -185,6 +185,7 @@
   },
   "active": "b250b0cc7e428393",
   "lastOpenFiles": [
+    "dev/COS1-Project/COS1-Project/TaskManager.cpp~RF4ba1ba8.TMP",
     "dev/COS1-Project/COS1-Project/Task.h~RF4ab6dd8.TMP",
     "dev/COS1-Project/COS1-Project/aqmzrqkd.wga~",
     "Project README GOOD EXAMPLE.md",
@@ -201,7 +202,6 @@
     "dev/PotionShelfPrototype/PotionShelfPrototype/ARM64/Debug/PotionSh.17366923.tlog/link-rc.read.1.tlog",
     "dev/PotionShelfPrototype/PotionShelfPrototype/ARM64/Debug/PotionSh.17366923.tlog/link-mt.write.1.tlog",
     "dev/PotionShelfPrototype/PotionShelfPrototype/ARM64/Debug/PotionSh.17366923.tlog/link-mt.read.1.tlog",
-    "dev/PotionShelfPrototype/PotionShelfPrototype/ARM64/Debug/PotionSh.17366923.tlog/unsuccessfulbuild",
     "docs/FLastname-VersionControl.md"
   ]
 }

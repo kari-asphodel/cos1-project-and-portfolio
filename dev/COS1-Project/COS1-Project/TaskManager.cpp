@@ -1,7 +1,8 @@
 #include "TaskManager.h"
 #include <iostream>
 #include <algorithm>
-
+#include <fstream>
+#include <sstream>
 void TaskManager::AddTask(std::string title, std::string priority, std::string category)
 {
 	activeTasks.push_back(Task(title, priority, category));
@@ -81,4 +82,80 @@ void TaskManager::DisplaySummary() const
 int TaskManager::GetActiveTaskCount() const
 {
 	return activeTasks.size();
+}
+
+void TaskManager::SaveToTextFile(std::string fileName) const
+{
+	std::ofstream file(fileName);
+	if (!file.is_open())
+	{
+		std::cout << "\nUnable to open text file for saving.\n";
+		return;
+	}
+	for (int i = 0; i < activeTasks.size(); i++)
+	{
+		file << activeTasks[i].ToTextLine() << "\n";
+	}
+	for (int i = 0; i < completedTasks.size(); i++)
+	{
+		file << completedTasks[i].ToTextLine() << "\n";
+	}
+	file.close();
+	std::cout << "\nTasks saved to the text file successfully.\n";
+	//Record lecture|High|Work|0
+	//Submit milestone | Medium | School | 1
+}
+void TaskManager::LoadFromTextFile(std::string fileName)
+{
+	std::ifstream file(fileName);
+	if (!file.is_open())
+	{
+		std::cout << "\nNo text save file found.\n";
+		return;
+	}
+	activeTasks.clear();
+	completedTasks.clear();
+	std::string line;
+	while (std::getline(file, line))
+	{
+		std::stringstream stream(line);
+		std::string title;
+		std::string priority;
+		std::string category;
+		std::string completedText;
+		std::getline(stream, title, '|');
+		std::getline(stream, priority, '|');
+		std::getline(stream, category, '|');
+		std::getline(stream, completedText, '|');
+
+		bool isCompleted = completedText == "1";
+		Task loadedTask(title, priority, category, isCompleted);
+		if (isCompleted)
+		{
+			completedTasks.push_back(loadedText);
+		}
+		else
+		{
+			activeTasks.push_back(loadedText);
+		}
+	}
+	file.close();
+	std::cout << "\nTasks loaded from text file successfully.\n";
+}
+
+void TaskManager::WriteStringBinary(std::ofstream& file, const std::string& text) const
+{
+	int length = static_cast<int>(text.size());
+	file.write(reinterpret_cast<char*>(&length), sizeof(length));
+	file.write(text.c_str(), length);
+}
+
+std::string TaskManager::ReadStringBinary(std::ifstream& file) const
+{
+	int length = 0;
+	file.read(reinterpret_cast<char*>(&length), sizeof(length));
+
+	std::string text(length, ' ');
+	file.read(&text[0], length);
+	return text;
 }
