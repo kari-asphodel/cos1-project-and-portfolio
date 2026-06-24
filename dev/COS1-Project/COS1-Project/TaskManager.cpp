@@ -159,3 +159,31 @@ std::string TaskManager::ReadStringBinary(std::ifstream& file) const
 	file.read(&text[0], length);
 	return text;
 }
+
+void TaskManager::SaveToBinaryFile(std::string fileName) const
+{
+	std::ofstream file(fileName, std::ios::binary);
+	if (!file.is_open())
+	{
+		std::cout << "\nUnable to open binary file for saving.\n";
+		return;
+	}
+	int activeCount = static_cast<int>(activeTasks.size());
+	int completedCount = static_cast<int>(completedTasks.size());
+	file.write(reinterpret_cast<char*>(&activeCount), sizeof(activeCount));
+	for (int i = 0; i < activeTasks.size(); i++)
+	{
+		WriteStringBinary(file, activeTasks[i].GetTitle());
+		WriteStringBinary(file, activeTasks[i].GetPriority());
+		WriteStringBinary(file, activeTasks[i].GetCategory());
+	}
+	file.write(reinterpret_cast<char*>(&completedCount), sizeof(completedCount));
+	for (int i = 0; i < completedTasks.size(); i++)
+	{
+		WriteStringBinary(file, completedTasks[i].GetTitle());
+		WriteStringBinary(file, completedTasks[i].GetPriority());
+		WriteStringBinary(file, completedTasks[i].GetCategory());
+	}
+	file.close();
+	std::cout << "\nTasks saved to binary file successfully.\n";
+}
