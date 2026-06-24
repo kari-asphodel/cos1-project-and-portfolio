@@ -1,6 +1,11 @@
 #include "Task.h"
-
-Task::Task(std::string taskTitle, std::string taskPriority, std::string taskCategory)
+Task::Task() {
+	title = "";
+	priority = "Low";
+	category = "General";
+	isCompleted = false;
+}
+Task::Task(std::string taskTitle, std::string taskPriority, std::string taskCategory, bool isCompleted)
 {
 	title = taskTitle;
 	priority = taskPriority;
@@ -46,4 +51,10 @@ int Task::GetPriorityScore() const
 		return 1;
 	}
 	return 0;
+}
+
+std::string Task::ToTextLine() const
+{
+	std::string completedText = isCompleted ? "1" : "0";
+	return title + "|" + priority + "|" + category + "|" + completedText;
 }
