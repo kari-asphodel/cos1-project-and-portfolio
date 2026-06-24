@@ -132,11 +132,11 @@ void TaskManager::LoadFromTextFile(std::string fileName)
 		Task loadedTask(title, priority, category, isCompleted);
 		if (isCompleted)
 		{
-			completedTasks.push_back(loadedText);
+			completedTasks.push_back(loadedTask);
 		}
 		else
 		{
-			activeTasks.push_back(loadedText);
+			activeTasks.push_back(loadedTask);
 		}
 	}
 	file.close();
